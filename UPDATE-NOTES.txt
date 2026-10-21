@@ -1,0 +1,11 @@
+KRAMAR RENT CAR — UPDATE NOTES
+
+This archive is the corrected copy of the project uploaded for the current task.
+
+Main corrections:
+- Porsche Panamera Turbo S image paths now point to the four existing PNG files in public/cars/panamera-971/.
+- EN / ES / UA interface translations have been expanded and checked for matching keys.
+- Displayed car categories and automatic transmission labels are localized.
+- Existing visual design, vehicle data, images, routes, gallery system and request form have been retained.
+
+See AUDIT-REPORT.txt for the exact findings, validation results and limitations.

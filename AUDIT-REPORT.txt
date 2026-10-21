@@ -1,0 +1,39 @@
+KRAMAR RENT CAR — FIX REPORT
+
+Source archive:
+kramar-rent-car-improved2 2(2).zip
+Only this uploaded archive was used as the source.
+
+FIX 1 — PORSCHE PANAMERA TURBO S
+- Confirmed that all four original image files are present in public/cars/panamera-971/.
+- Actual filenames are 1.png, 2.png, 3.png and 4.png.
+- src/App.jsx previously referenced 1.jpg, 2.jpg, 3.jpg and 4.jpg. These paths did not exist.
+- Updated the four image references to the existing .png files.
+- Updated the Panamera README so it documents the actual filenames.
+- Kept the existing car data, slug, category, specifications, null price and null deposit unchanged.
+- Confirmed that the Sport Cars group filter includes the Panamera category.
+
+FIX 2 — EN / ES / UA
+- Added matching translation keys in English, Spanish and Ukrainian for hard-coded visible interface text across the home page, catalogue cards, benefits, offers, booking category labels, rental rates, conditions notices and vehicle detail page.
+- Localized displayed car categories and the “Automatic” transmission label.
+- Replaced the Panamera fuel-consumption placeholder with the existing localized “to be confirmed” translation.
+- Kept car brand and model names unchanged.
+- Kept instant language switching through React state and persistence through localStorage.
+- Added validation of the stored language so an invalid stored value falls back to English.
+- Verified that all t.* keys used in App.jsx exist in all three language dictionaries.
+
+VALIDATION
+- All 53 distinct image paths referenced in App.jsx were checked against public/; no missing referenced image paths remain.
+- Confirmed all four Panamera files are PNG images, 1536 × 1024.
+- JSX parsing passed.
+- ESLint on src/App.jsx passed.
+- Production build could not be completed in this environment: the archive contains macOS-specific node_modules and its Rolldown native binding is unavailable on Linux. This is an environment/dependency issue, not a reported source-code build success.
+- Browser-based visual, mobile and interactive tests were not performed.
+
+TO RUN ON MAC
+1. Open the project folder in VS Code.
+2. In Terminal, run: npm install
+3. Then run: npm run build
+4. To start locally, run: npm run dev
+
+No node_modules folder is included in the ZIP. Dependencies should be installed on the Mac.
